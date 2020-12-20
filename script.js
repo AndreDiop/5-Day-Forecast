@@ -21,9 +21,21 @@ $("#searchButton").on("click", function (event) {
     url: queryURL,
     method: "GET",
   }).then(function (response) {
-    console.log(response.main.temp); //log temperature
-    console.log(response.main.humidity);
-    console.log(response.wind.speed);
-    console.log(response);
+    var lat = response.coord.lat;
+    var lon = response.coord.lon;
+
+    console.log(lat);
+    $("#temperature").text("The temperature is " + response.main.temp + "°");
+    $("#humidity").text("The humidity is " + response.main.humidity + "%");
+    $("#windSpeed").text("The wind speed is " + response.wind.speed + "%");
+    
+    $.ajax({
+        url: "https://api.openweathermap.org/data/2.5/uvi?lat="+lat+"&lon="+lon+"&appid="+apiKey,
+        method: "GET",
+      }).then(function (response) {
+        console.log(response.value)
+        $("#uvIndex").text("The current UV Index is " + response.value + "%");
+
+      });
   });
 });
