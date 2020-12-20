@@ -31,70 +31,71 @@
       <p class="lead text-center">"How's the weather"</p>
       <p id="currentDay" class="lead"></p>
     </header>
-
     <div class="row">
-      <div class="col-4">
+      <div class="col-md-auto">
         <div
           class="bg-light border-right"
           id="sidebar-wrapper"
           style="border-style: outset"
         >
-          <div class="sidebar-heading"></div>
-          <div class="list-group list-group-flush">
+          <div class="sidebar-heading">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="userInput"
+                placeholder="Enter City Name"
+                aria-label="Recipient's city"
+                aria-describedby="button-addon2"
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-outline-secondary fas fa-search"
+                  type="button"
+                  id="searchButton"
+                ></button>
+              </div>
+            </div>
+          </div>
+          <div class="list-group list-group-flush" id="cityList">
             <a
               href="#"
               class="list-group-item list-group-item-action bg- fas fa-city"
               >Atlanta</a
             >
-            <a
-              href="#"
-              class="list-group-item list-group-item-action bg-light fas fa-city"
-            >
-              Dallas</a
-            >
-            <a
-              href="#"
-              class="list-group-item list-group-item-action bg-light fas fa-city"
-            >
-              Amsterdam</a
-            >
-            <a
-              href="#"
-              class="list-group-item list-group-item-action bg-light fas fa-city"
-            >
-              Honolulu</a
-            >
-            <a
-              href="#"
-              class="list-group-item list-group-item-action bg-light fas fa-city"
-            >
-              Saginaw</a
-            >
-            <a
-              href="#"
-              class="list-group-item list-group-item-action bg-light fas fa-city"
-            >
-              Tulum</a
-            >
           </div>
         </div>
       </div>
-      <div class="col-8" style="border-style: outset">
+      <div class="col" style="border-style: outset" id="cityInfo">
         <h3>Atlanta : Date</h3>
-        <ul>
+        <ul id="teperature">
           Temperature:
         </ul>
-        <ul>
+        <ul id="humidity">
           Humidity:
         </ul>
-        <ul>
+        <ul id="windSpeed">
           Wind Speed:
         </ul>
-        <ul>
+        <ul id="uvIndex">
           UV Index:
         </ul>
       </div>
     </div>
+    <div class="row" style="border-style: outset">
+      <div
+        class="card text-white bg-info mb-3"
+        style="max-width: 18rem; display: inline-block"
+      >
+        <h5 class="card-header" id="cardDate">12/19/2020</h5>
+        <div class="card-body">
+          <h5 class="card-title" id="cardIcon">icon here</h5>
+          <p class="card-text" id="cardTemperature">Temperature:</p>
+          <p class="card-text" id="cardHumidity">Humidity:</p>
+        </div>
+      </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>
