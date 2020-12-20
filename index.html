@@ -40,14 +40,12 @@
           >
             <div class="sidebar-heading">
               <div class="input-group mb-3">
-                  <!-- user inputs city search here -->
+                <!-- user inputs city search here -->
                 <input
                   type="text"
                   class="form-control"
                   id="userInput"
                   placeholder="Enter City Name"
-                  aria-label="Recipient's city"
-                  aria-describedby="button-addon2"
                 />
                 <div class="input-group-append">
                   <button
@@ -58,48 +56,24 @@
                 </div>
               </div>
             </div>
-            <div class="list-group list-group-flush" id="cityList">
-              <a
-                href="#"
-                class="list-group-item list-group-item-action bg- fas fa-city"
-                >Atlanta</a
-              >
+            <!-- list of cities searched for previously -->
+            <div class="list-group list-group-flush">
+              <div class="" id="cityDisplay"></div>
             </div>
           </div>
         </div>
         <div class="col" style="border-style: outset" id="cityInfo">
           <h3 id="searchedCity"></h3>
           <h3 id="currentDay"></h3>
-          <ul id="temperature">
-           
-          </ul>
-          <ul id="humidity">
-          
-          </ul>
-          <ul id="windSpeed">
-          
-          </ul>
-          <ul id="uvIndex">
-   
-          </ul>
+          <ul id="temperature"></ul>
+          <ul id="humidity"></ul>
+          <ul id="windSpeed"></ul>
+          <ul id="uvIndex"></ul>
         </div>
       </div>
       <div class="col-12">
         <h3>5 Day Forecast:</h3>
         <div class="row" style="border-style: outset">
-          <div class="col-sm-10 col-md-4 offset-lg-1 col-lg-2">
-            <div
-              class="card text-white bg-info mb-3"
-              style="max-width: 18rem; display: inline-block"
-            >
-              <h5 class="card-header" id="cardDate">12/19/2020</h5>
-              <div class="card-body">
-                <h5 class="card-title" id="cardIcon">icon here</h5>
-                <p class="card-text" id="cardTemperature">Temperature:</p>
-                <p class="card-text" id="cardHumidity">Humidity:</p>
-              </div>
-            </div>
-          </div>
           <div class="col-sm-10 col-md-4 offset-lg-1 col-lg-2">
             <div
               class="card text-white bg-info mb-3"
