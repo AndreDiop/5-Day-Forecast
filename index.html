@@ -29,72 +29,95 @@
     <header class="jumbotron" style="background-color: powderblue">
       <h1 class="display-2 text-center">5 Day Forecast</h1>
       <p class="lead text-center">"How's the weather"</p>
-      <p id="currentDay" class="lead"></p>
     </header>
-    <div class="row">
-      <div class="col-md-auto">
-        <div
-          class="bg-light border-right"
-          id="sidebar-wrapper"
-          style="border-style: outset"
-        >
-          <div class="sidebar-heading">
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="userInput"
-                placeholder="Enter City Name"
-                aria-label="Recipient's city"
-                aria-describedby="button-addon2"
-              />
-              <div class="input-group-append">
-                <button
-                  class="btn btn-outline-secondary fas fa-search"
-                  type="button"
-                  id="searchButton"
-                ></button>
+    <main class="container">
+      <div class="row">
+        <div class="col-md-auto">
+          <div
+            class="bg-light border-right"
+            id="sidebar-wrapper"
+            style="border-style: outset"
+          >
+            <div class="sidebar-heading">
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="userInput"
+                  placeholder="Enter City Name"
+                  aria-label="Recipient's city"
+                  aria-describedby="button-addon2"
+                />
+                <div class="input-group-append">
+                  <button
+                    class="btn btn-outline-secondary fas fa-search"
+                    type="button"
+                    id="searchButton"
+                  ></button>
+                </div>
+              </div>
+            </div>
+            <div class="list-group list-group-flush" id="cityList">
+              <a
+                href="#"
+                class="list-group-item list-group-item-action bg- fas fa-city"
+                >Atlanta</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col" style="border-style: outset" id="cityInfo">
+          <h3 id="cityName">Atlanta!</h3>
+          <h3 id="currentDay"></h3>
+          <ul id="temperature">
+            Temperature:
+          </ul>
+          <ul id="humidity">
+            Humidity:
+          </ul>
+          <ul id="windSpeed">
+            Wind Speed:
+          </ul>
+          <ul id="uvIndex">
+            UV Index:
+          </ul>
+        </div>
+      </div>
+      <div class="col-12">
+        <h3>5 Day Forecast:</h3>
+        <div class="row" style="border-style: outset">
+          <div class="col-sm-10 col-md-4 offset-lg-1 col-lg-2">
+            <div
+              class="card text-white bg-info mb-3"
+              style="max-width: 18rem; display: inline-block"
+            >
+              <h5 class="card-header" id="cardDate">12/19/2020</h5>
+              <div class="card-body">
+                <h5 class="card-title" id="cardIcon">icon here</h5>
+                <p class="card-text" id="cardTemperature">Temperature:</p>
+                <p class="card-text" id="cardHumidity">Humidity:</p>
               </div>
             </div>
           </div>
-          <div class="list-group list-group-flush" id="cityList">
-            <a
-              href="#"
-              class="list-group-item list-group-item-action bg- fas fa-city"
-              >Atlanta</a
+          <div class="col-sm-10 col-md-4 offset-lg-1 col-lg-2">
+            <div
+              class="card text-white bg-info mb-3"
+              style="max-width: 18rem; display: inline-block"
             >
+              <h5 class="card-header" id="cardDate">12/19/2020</h5>
+              <div class="card-body">
+                <h5 class="card-title" id="cardIcon">icon here</h5>
+                <p class="card-text" id="cardTemperature">Temperature:</p>
+                <p class="card-text" id="cardHumidity">Humidity:</p>
+              </div>
+            </div>
           </div>
+          <div class="col-sm-10 col-md-4 offset-lg-1 col-lg-2"></div>
+          <div class="col-sm-10 col-md-4 offset-lg-1 col-lg-2"></div>
+          <div class="col-sm-10 col-md-4 offset-lg-1 col-lg-2"></div>
         </div>
       </div>
-      <div class="col" style="border-style: outset" id="cityInfo">
-        <h3>Atlanta : Date</h3>
-        <ul id="teperature">
-          Temperature:
-        </ul>
-        <ul id="humidity">
-          Humidity:
-        </ul>
-        <ul id="windSpeed">
-          Wind Speed:
-        </ul>
-        <ul id="uvIndex">
-          UV Index:
-        </ul>
-      </div>
-    </div>
-    <div class="row" style="border-style: outset">
-      <div
-        class="card text-white bg-info mb-3"
-        style="max-width: 18rem; display: inline-block"
-      >
-        <h5 class="card-header" id="cardDate">12/19/2020</h5>
-        <div class="card-body">
-          <h5 class="card-title" id="cardIcon">icon here</h5>
-          <p class="card-text" id="cardTemperature">Temperature:</p>
-          <p class="card-text" id="cardHumidity">Humidity:</p>
-        </div>
-      </div>
-    </div>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
