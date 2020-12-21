@@ -1,24 +1,30 @@
 var currentDay = moment().format("dddd, MMMM Do YYYY");
 // $("#currentDay").text(currentDay);
 
-var cityArray = ["Tulum", "London", "Atlanta"];
+var cityArray = ["Tulum", "Cancun"];
 
 function renderButtons() {
   for (var i = 0; i < cityArray.length; i++) {
-    var cityEl = $("<a>")
-      .addClass("list-group-item list-group-item-action bg- fas fa-city")
+    // $("cityDisplay").empty();
+    var cityEl = $("<div>")
+      .addClass("col-12 btn btn-light city-btn mb-1")
       .text(cityArray[i]);
-    $("#cityDisplay").prepend(cityEl);
+    $("#cityDisplay").append(cityEl);
   }
 }
-renderButtons();
+
 $("#searchButton").on("click", function (event) {
   event.preventDefault();
 
-  var cityName = $("#userInput").val(); //user enters city name to search
+  //user enters city name to search
+  var cityName = $("#userInput").val();
+  // cityArray.push(cityName);
+
+  //name populates on dashboard screen
   $("#searchedCity")
     .text("The forecast for " + cityName + " on " + currentDay)
-    .val(); //name populates on dashboard screen
+    .val();
+  //   adds name to list of cityArray
 
   var apiKey = "5fda15094fca4dcb78d5eb62c2222c88";
   var queryURL =
@@ -26,7 +32,6 @@ $("#searchButton").on("click", function (event) {
     cityName +
     "&units=imperial&appid=" +
     apiKey;
-
   // AJAX Call to get Temp,Humidity and wind speed.
   $.ajax({
     url: queryURL,
