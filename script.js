@@ -41,9 +41,9 @@ $("#searchButton").on("click", function (event) {
     var lon = response.coord.lon;
 
     // dynamic inputs that show on screen
-    $("#temperature").text("The temperature is " + response.main.temp + "°");
-    $("#humidity").text("The humidity is " + response.main.humidity + "%");
-    $("#windSpeed").text("The wind speed is " + response.wind.speed + "%");
+    $("#temperature").text("The Temperature is " + response.main.temp + "°");
+    $("#humidity").text("The Humidity is " + response.main.humidity + "%");
+    $("#windSpeed").text("The Wind Speed is " + response.wind.speed + "%");
 
     // Ajax call to get UV Index
     $.ajax({
