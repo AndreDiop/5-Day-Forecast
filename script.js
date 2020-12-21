@@ -39,10 +39,24 @@ $("#searchButton").on("click", function (event) {
   }).then(function (response) {
     var lat = response.city.coord.lat;
     var lon = response.city.coord.lon;
-    console.log(response)
+    console.log(response);
+
     $("#fiveDayDate1").text(response.list[4].dt_txt + "pm");
+    $("#fiveDayDate2").text(response.list[12].dt_txt + "pm");
+    $("#fiveDayDate3").text(response.list[20].dt_txt + "pm");
+    $("#fiveDayDate4").text(response.list[28].dt_txt + "pm");
+    $("#fiveDayDate5").text(response.list[36].dt_txt + "pm");
     $("#fiveDayTemperature1").text(response.list[4].main.temp);
+    $("#fiveDayTemperature2").text(response.list[12].main.temp);
+    $("#fiveDayTemperature3").text(response.list[20].main.temp);
+    $("#fiveDayTemperature4").text(response.list[28].main.temp);
+    $("#fiveDayTemperature5").text(response.list[36].main.temp);
     $("#fiveDayHumidity1").text(response.list[4].main.humidity);
+    $("#fiveDayHumidity1").text(response.list[12].main.humidity);
+    $("#fiveDayHumidity1").text(response.list[20].main.humidity);
+    $("#fiveDayHumidity1").text(response.list[28].main.humidity);
+    $("#fiveDayHumidity1").text(response.list[36].main.humidity);
+    $("#fiveDayImage1").text(response.list[4].weather[0].icon);
 
     // dynamic inputs that show on screen
 
