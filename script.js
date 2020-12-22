@@ -12,9 +12,8 @@ function init() {
 }
 
 function renderButtons() {
+  $("#cityDisplay").empty();
   for (var i = 0; i < cityArray.length; i++) {
-    $("#cityDisplay").empty();
-
     var cityEl = $("<div>")
       .addClass("col-6 btn btn-light city-btn mb-1")
       .text(cityArray[i]);
@@ -66,7 +65,6 @@ $("#searchButton").on("click", function (event) {
     $("#fiveDayHumidity3").text(response.list[20].main.humidity);
     $("#fiveDayHumidity4").text(response.list[28].main.humidity);
     $("#fiveDayHumidity5").text(response.list[36].main.humidity);
-    $("#fiveDayImage1").text(response.list[4].weather[0].icon);
 
     // Ajax call to get UV Index
     $.ajax({
