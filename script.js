@@ -1,32 +1,43 @@
 var currentDay = moment().format("dddd, MMMM Do YYYY");
 // $("#currentDay").text(currentDay);
 
-var cityArray = ["Tulum", "Cancun"];
+var cityArray = [];
+
+function init() {
+  var savedCites = JSON.parse(localStorage.getItem("cityArray"));
+  if (savedCites !== null) {
+    cityArray = savedCites;
+  }
+  renderButtons();
+}
 
 function renderButtons() {
   for (var i = 0; i < cityArray.length; i++) {
-    // $("cityDisplay").empty();
+    $("#cityDisplay").empty();
+
     var cityEl = $("<div>")
-      .addClass("col-12 btn btn-light city-btn mb-1")
+      .addClass("col-6 btn btn-light city-btn mb-1")
       .text(cityArray[i]);
     $("#cityDisplay").append(cityEl);
   }
 }
+init();
 
 $("#searchButton").on("click", function (event) {
   event.preventDefault();
 
   //user enters city name to search
   var cityName = $("#userInput").val();
-  // cityArray.push(cityName);
+  cityArray.push(cityName);
+  localStorage.setItem("cityArray", JSON.stringify(cityArray));
+  renderButtons();
 
   //name populates on dashboard screen
   $("#searchedCity")
     .text("The forecast for " + cityName + " on " + currentDay)
     .val();
-  //   adds name to list of cityArray
 
-  var apiKey = "5fda15094fca4dcb78d5eb62c2222c88";
+  var apiKey = "33cb8352bec85f85c7b146f834d98749";
   var queryURL =
     "https://api.openweathermap.org/data/2.5/forecast?q=" +
     cityName +
@@ -39,8 +50,7 @@ $("#searchButton").on("click", function (event) {
   }).then(function (response) {
     var lat = response.city.coord.lat;
     var lon = response.city.coord.lon;
-    console.log(response);
-
+    // Populates info for 5 day cards
     $("#fiveDayDate1").text(response.list[4].dt_txt + "pm");
     $("#fiveDayDate2").text(response.list[12].dt_txt + "pm");
     $("#fiveDayDate3").text(response.list[20].dt_txt + "pm");
@@ -52,13 +62,11 @@ $("#searchButton").on("click", function (event) {
     $("#fiveDayTemperature4").text(response.list[28].main.temp);
     $("#fiveDayTemperature5").text(response.list[36].main.temp);
     $("#fiveDayHumidity1").text(response.list[4].main.humidity);
-    $("#fiveDayHumidity1").text(response.list[12].main.humidity);
-    $("#fiveDayHumidity1").text(response.list[20].main.humidity);
-    $("#fiveDayHumidity1").text(response.list[28].main.humidity);
-    $("#fiveDayHumidity1").text(response.list[36].main.humidity);
+    $("#fiveDayHumidity2").text(response.list[12].main.humidity);
+    $("#fiveDayHumidity3").text(response.list[20].main.humidity);
+    $("#fiveDayHumidity4").text(response.list[28].main.humidity);
+    $("#fiveDayHumidity5").text(response.list[36].main.humidity);
     $("#fiveDayImage1").text(response.list[4].weather[0].icon);
-
-    // dynamic inputs that show on screen
 
     // Ajax call to get UV Index
     $.ajax({
@@ -71,7 +79,7 @@ $("#searchButton").on("click", function (event) {
         apiKey,
       method: "GET",
     }).then(function (response) {
-      console.log(response);
+      // this logs the current city info
       $("#uvIndex").text(
         "The current UV Index is " + response.current.uvi + "%"
       );
