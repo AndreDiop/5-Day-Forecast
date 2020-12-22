@@ -1,6 +1,5 @@
 var currentDay = moment().format("dddd, MMMM Do YYYY");
-// $("#currentDay").text(currentDay);
-
+var cityName = $("#userInput").val();
 var cityArray = [];
 
 function init() {
@@ -15,18 +14,17 @@ function renderButtons() {
   $("#cityDisplay").empty();
   for (var i = 0; i < cityArray.length; i++) {
     var cityEl = $("<button>")
-      .addClass("col-12 btn btn-light city-btn mb-1")
+      .addClass("col-12 btn btn-light city mb-1")
       .text(cityArray[i]);
     $("#cityDisplay").append(cityEl);
   }
 }
 init();
-
 $("#searchButton").on("click", function (event) {
   event.preventDefault();
 
   //user enters city name to search
-  var cityName = $("#userInput").val();
+  cityName = $("#userInput").val();
   cityArray.push(cityName);
   localStorage.setItem("cityArray", JSON.stringify(cityArray));
   renderButtons();
@@ -91,8 +89,8 @@ $("#searchButton").on("click", function (event) {
     });
   });
 });
-// $("#cityDisplay").on("click", "button.city-btn", function (event) {
-//   let clickedCity = $(this).text();
-//   let foundCity = $.grep(pastCities, function (storedCity) {
-//       return clickedCity === storedCity.city;
-//   })
+
+$("#cityDisplay").on("click", "button.city", function (cityHistory) {
+  // var oldCityEl = $this.value;
+  console.log("You clicked a button");
+});
