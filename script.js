@@ -14,8 +14,8 @@ function init() {
 function renderButtons() {
   $("#cityDisplay").empty();
   for (var i = 0; i < cityArray.length; i++) {
-    var cityEl = $("<div>")
-      .addClass("col-6 btn btn-light city-btn mb-1")
+    var cityEl = $("<button>")
+      .addClass("col-12 btn btn-light city-btn mb-1")
       .text(cityArray[i]);
     $("#cityDisplay").append(cityEl);
   }
@@ -91,3 +91,8 @@ $("#searchButton").on("click", function (event) {
     });
   });
 });
+// $("#cityDisplay").on("click", "button.city-btn", function (event) {
+//   let clickedCity = $(this).text();
+//   let foundCity = $.grep(pastCities, function (storedCity) {
+//       return clickedCity === storedCity.city;
+//   })
