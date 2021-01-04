@@ -1,154 +1,43 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>5 Day Forecast</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Jumbotron Header -->
-    <header class="jumbotron" style="background-color: powderblue">
-      <h1 class="display-2 text-center">5 Day Forecast</h1>
-      <p class="lead text-center">"How's the weather"</p>
-    </header>
-    <main class="container">
-      <div class="row">
-        <div class="col-3" style="background-color: powderblue">
-          <div class="row">
-            <h2>Search for a city</h2>
-            <div class="col-12">
-              <!-- User Input Form -->
-              <div class="input-group mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="userInput"
-                  placeholder="City Name"
-                />
-                <!-- User Input Button -->
-                <button
-                  class="btn btn-outline-secondary fas fa-search"
-                  type="button"
-                  id="searchButton"
-                ></button>
-              </div>
-              <!-- Where Cities will be populated -->
-              <div class="row" id="cityDisplay"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-9" style="background-color: lightgray" ;>
-          <div class="row">
-            <div class="col-12" id="cityInfo">
-              <!-- populates with searched city information -->
-              <h3 id="searchedCity"></h3>
-              <ul id="temperature"></ul>
-              <ul id="humidity"></ul>
-              <ul id="windSpeed"></ul>
-              <ul id="uvIndex"></ul>
-            </div>
-            <div class="col-12">
-              <h3>5 Day Forecast</h3>
-              <!-- 5 day cards  -->
-              <div class="row">
-                <div class="col-sm-10 col-md-4 col-lg-2 p-1 text-center">
-                  <div class="card day-4 m-0">
-                    <div class="card-body p-1">
-                      <p class="card-title" id="fiveDayDate1"></p>
-                      <img class="fiveDayImage1 mb-2" src="" alt="" />
-                      <p class="card-subtitle mb-2">
-                        Temp: <span id="fiveDayTemperature1"></span> °F
-                      </p>
-                      <p class="card-subtitle mb-2">
-                        Humidity: <span id="fiveDayHumidity1"></span>%
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-10 col-md-4 col-lg-2 p-1 text-center">
-                  <div class="card day-4 m-0">
-                    <div class="card-body p-1">
-                      <p class="card-title" id="fiveDayDate2"></p>
-                      <img class="fiveDayImage2 mb-2" src="" alt="" />
-                      <p class="card-subtitle mb-2">
-                        Temp: <span id="fiveDayTemperature2"></span> °F
-                      </p>
-                      <p class="card-subtitle mb-2">
-                        Humidity: <span id="fiveDayHumidity2"></span>%
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-10 col-md-4 col-lg-2 p-1 text-center">
-                  <div class="card day-4 m-0">
-                    <div class="card-body p-1">
-                      <p class="card-title" id="fiveDayDate3"></p>
-                      <img class="fiveDayImage3 mb-2" src="" alt="" />
-                      <p class="card-subtitle mb-2">
-                        Temp: <span id="fiveDayTemperature3"></span> °F
-                      </p>
-                      <p class="card-subtitle mb-2">
-                        Humidity: <span id="fiveDayHumidity3"></span>%
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-10 col-md-4 col-lg-2 p-1 text-center">
-                  <div class="card day-4 m-0">
-                    <div class="card-body p-1">
-                      <p class="card-title" id="fiveDayDate4"></p>
-                      <img class="fiveDayImage4 mb-2" src="" alt="" />
-                      <p class="card-subtitle mb-2">
-                        Temp: <span id="fiveDayTemperature4"></span> °F
-                      </p>
-                      <p class="card-subtitle mb-2">
-                        Humidity: <span id="fiveDayHumidity4"></span>%
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-10 col-md-4 col-lg-2 p-1 text-center">
-                  <div class="card day-4 m-0">
-                    <div class="card-body p-1">
-                      <p class="card-title" id="fiveDayDate5"></p>
-                      <img class="fiveDayImage5 mb-2" src="" alt="" />
-                      <p class="card-subtitle mb-2">
-                        Temp: <span id="fiveDayTemperature5"></span> °F
-                      </p>
-                      <p class="card-subtitle mb-2">
-                        Humidity: <span id="fiveDayHumidity5"></span>%
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
+<html lang="en">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Weather at a Glance</title>
+</head>
+
+<body>
+  <header class="container-fluid text-center text-white bg-dark p-2">
+    <h1>How's The Weather?</h1>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <aside class="col-lg-3 bg-light">
+        <h5 class="mt-1">Search for a City:</h5>
+        <div class="form-inline form-group">
+          <input class="form-control" type="text" id="search-value" />
+          <button class="btn btn-primary" id="search-button"> <i class="fa fa-search"></i> </button>
+        </div>
+
+        <ul class="list-group history"></ul>
+      </aside>
+
+      <div class="col-lg-9">
+        <div id="today" class="mt-3"></div>
+        <div id="forecast" class="mt-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>
