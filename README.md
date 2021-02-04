@@ -21,7 +21,7 @@
 # About
 On the surface this may seem like just a weather dashboard and it is, however many behind the scenes elements make it work. There are API calls which obtain information to then again make ANOTHER API call to gather more information. There are CDN libraries which deliver the date and display it to the user. Also users input and city searches are saved in local storage and retrieved to be displayed as buttons on the page.
 ## Installation
-Users don not havr to install anything when using this application
+Users do not have to install anything when using this application
 ## Usage
 Users are presented with an input form and asked to enter a city name. Once the city name is entered, the current weather will be populated as Temperature, Humidity, Wind Speed and UV index. Additionally, a 5 day forecast will be populated for the next 5 days based on the current date of the request.
 ## Test Instructions
